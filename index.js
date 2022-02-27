@@ -1,40 +1,47 @@
+const node = () => {
+    const node = document.createElement('li');
+    const textNode = document.createTextNode(result);
+    node.appendChild(textNode);
+    document.getElementById('result').appendChild(node);
+}
+
+const number = () => {
+    return num = document.querySelector('#num').value;
+}
+
 const sunFxn = (num) => {
     add = 0;
+    number();
     for (let i = 1; i <= num; i++) {
         add = add + i;
     }
-    return add;
-}
-const Sum = (e) => {
-    e.preventDefault();
-    var num = document.querySelector('#num').value;
-    sunFxn(num);
-    let sum = `The sum of first ${num} natural numbers is ${add}.`;
-    const node = document.createElement('li');
-    const textNode = document.createTextNode(sum);
-    console.log(node);
-    console.log(textNode);
-    node.appendChild(textNode);
-    document.getElementById('result').appendChild(node);
+    return result = `The sum of first ${num} natural numbers is ${add}.`;
 }
 
-const Factorial = (e) => {
-    var num = document.querySelector('#num').value;
+const Sum = (e) => {
     e.preventDefault();
+    number();
+    sunFxn(num);
+    node();
+}
+
+const getFactorial = (num) => {
     let fact = 1;
+    number();
     for (let i = 1; i <= num; i++) {
         fact = fact * i;
     }
-    let fact1 = `The factorial of ${num} is ${fact}`;
-    const node = document.createElement('li');
-    const textNode = document.createTextNode(fact1);
-    node.appendChild(textNode);
-    document.getElementById('result').appendChild(node);
+    return result = `The factorial of ${num} is ${fact}`;
 }
 
-const evenOdd = (e) => {
-    var num = document.querySelector('#num').value;
+const Factorial = (e) => {
     e.preventDefault();
+    number();
+    getFactorial(num);
+    node();
+}
+
+const getEvenOdd = (num) => {
     var flag = 0;
     if (num % 2 == 0) {
         flag = 0;
@@ -42,14 +49,17 @@ const evenOdd = (e) => {
         flag = 1;
     }
     if (flag == 0) {
-        result = `The number ${num} is even`;
+        return result = `The number ${num} is even`;
     } else {
-        result = `The number ${num} is odd`;
+        return result = `The number ${num} is odd`;
     }
-    const node = document.createElement('li');
-    const textNode = document.createTextNode(result);
-    node.appendChild(textNode);
-    document.getElementById('result').appendChild(node);
+}
+
+const evenOdd = (e) => {
+    e.preventDefault();
+    number();
+    getEvenOdd(num);
+    node();
 }
 
 const checkPrime = (num) => {
@@ -63,12 +73,9 @@ const checkPrime = (num) => {
 
 const Prime = (e) => {
     e.preventDefault();
-    var num = document.querySelector('#num').value;
+    number();
     checkPrime(num);
-    const node = document.createElement('li');
-    const textNode = document.createTextNode(result);
-    node.appendChild(textNode);
-    document.getElementById('result').appendChild(node);
+    node();
 }
 
 const myFunction = () => {
@@ -76,31 +83,9 @@ const myFunction = () => {
     document.getElementById('result').innerText = '';
 }
 
-// const threeLasrgest = (a,b,c)=>{
-//   var largest = 0;
-//   if(a>b){
-//     if(a>c){
-//       largest = a;
-//     }else{
-//       largest = c;
-//     }
-//   }
-//   else{
-//     if(b>c){
-//       largest = b;
-//     }
-//     else{
-//       largest = c;
-//     }
-//   }
-//   return largest;
-// }
-
-// console.log(threeLasrgest(3,2,1));
-
 const getAllPrime = (num) => {
     let prime = [];
-    for (var i = 2; i < num; i++) {
+    for (var i = 2; i <= num; i++) {
         let flag = 0;
         for (var j = 2; j < i; j++) {
             if (i % j == 0) {
@@ -117,12 +102,9 @@ const getAllPrime = (num) => {
 
 const allPrime = (e) => {
     e.preventDefault();
-    var num = document.querySelector('#num').value;
+    number();
     getAllPrime(num);
-    const node = document.createElement('li');
-    const textNode = document.createTextNode(result);
-    node.appendChild(textNode);
-    document.getElementById('result').appendChild(node);
+    node();
 }
 
 const fibonacci = (num) => {
@@ -141,12 +123,9 @@ const fibonacci = (num) => {
 
 const getFibonacci = (e) => {
     e.preventDefault();
-    var num = document.querySelector('#num').value;
+    number();
     fibonacci(num);
-    const node = document.createElement('li');
-    const textNode = document.createTextNode(result);
-    node.appendChild(textNode);
-    document.getElementById('result').appendChild(node);
+    node();
 }
 
 const armstrong = (num) => {
@@ -157,23 +136,15 @@ const armstrong = (num) => {
         pow += pow1;
     }
     if (num == pow) {
-        return 1;
+        return result = `The number ${num} is a Armstrong Number`;
     } else {
-        return 0;
+        return result = `The number ${num} is not a Armstrong Number`;
     }
 }
 
 const getArmstrong = (e) => {
     e.preventDefault();
-    var num = document.querySelector('#num').value;
-    let result = '';
-    if (armstrong(num) == 1) {
-        result = `The number ${num} is a Armstrong Number`;
-    } else {
-        result = `The number ${num} is not a Armstrong Number`;
-    }
-    const node = document.createElement('li');
-    const textNode = document.createTextNode(result);
-    node.appendChild(textNode);
-    document.getElementById('result').appendChild(node);
+    number();
+    armstrong(num);
+    node();
 }
