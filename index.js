@@ -152,32 +152,28 @@ const getFibonacci = (e) => {
 const armstrong = (num) => {
     let len = num.length;
     let pow = 0;
-    // console.log(typeof(num));
     for (let i = 0; i < len; i++) {
         let pow1 = Math.pow(num[i], len);
         pow += pow1;
     }
     if (num == pow) {
-        return true;
+        return 1;
+    } else {
+        return 0;
     }
-    return false;
 }
 
 const getArmstrong = (e) => {
     e.preventDefault();
     var num = document.querySelector('#num').value;
-    armstrong(num);
-    if (true) {
-        alert("a")
-        let result = `The number ${num} is a Armstrong Number`;
+    let result = '';
+    if (armstrong(num) == 1) {
+        result = `The number ${num} is a Armstrong Number`;
     } else {
-        alert('b');
-        let result = `The number ${num} is not a Armstrong Number`;
+        result = `The number ${num} is not a Armstrong Number`;
     }
     const node = document.createElement('li');
-    console.log(node);
     const textNode = document.createTextNode(result);
-    console.log(textNode);
     node.appendChild(textNode);
     document.getElementById('result').appendChild(node);
 }
